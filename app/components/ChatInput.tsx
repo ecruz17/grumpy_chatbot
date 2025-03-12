@@ -1,7 +1,6 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
-import { getMessage } from "../services/getMessage";
 
 interface Props {
   onSendMessage: (message: string, clearInput: () => void) => void;
