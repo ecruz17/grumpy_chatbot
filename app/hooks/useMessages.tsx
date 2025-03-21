@@ -34,6 +34,7 @@ export const useMessages = () => {
           msg.text === "Escribiendo..." ? { text: "Oops! Something went wrong.", isUser: false } : msg
         )
       );
+      console.log(err);
       throw new Error('Error fetching chatbot response: ');
     }
   };
