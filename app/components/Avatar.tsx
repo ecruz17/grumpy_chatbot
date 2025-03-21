@@ -1,17 +1,18 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
+import { useState } from "react";
+import Image from "next/image";
+import { LuLoaderCircle } from "react-icons/lu";
 
 export const Avatar = () => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <>
+    <div className="relative flex items-center justify-center">
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-500 rounded-full animate-pulse">
-          Loading...
-        </div>
+        <span className="absolute text-xs text-white animate-pulse bg-gray-600 w-[45px] h-[45px] rounded-full flex items-center justify-center">
+          <LuLoaderCircle className="animate-spin" size={20} />
+        </span>
       )}
       <Image
         src="https://thispersondoesnotexist.com/"
@@ -21,6 +22,6 @@ export const Avatar = () => {
         className="rounded-full"
         onLoad={() => setLoading(false)}
       />
-    </>
+    </div>
   );
-}
+};
